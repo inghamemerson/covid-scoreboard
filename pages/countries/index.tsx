@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { ICountry } from '../../@types/ICountry';
 
@@ -29,7 +29,7 @@ const CountryIndex = ({ countries }: ICountryIndex) => (
   </div>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/countries`);
   const data = await res.json();
   let countries: ICountry[] | string[] = data;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { ICountry } from '../@types/ICountry';
 
@@ -54,7 +54,7 @@ const Home = ({ top10, bottom10 }: IHome) => (
   </div>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const top10Res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/countries/rollup`);
   const bottom10Res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/countries/rollup?type=bottom`);
   const top10Data = await top10Res.json();
