@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
-import Link from 'next/link';
 import { ICountry } from '../../@types/ICountry';
+import { Header, Breadcrumbs, Table } from '../../components';
 
 interface ICountryIndex {
   countries: ICountry[];
@@ -14,17 +14,19 @@ const CountryIndex = ({ countries }: ICountryIndex) => (
       <title>Countries | Covid Scoreboard</title>
       <meta name="description" content="Indexing all countries" />
     </Head>
-    {countries && countries.length > 0 && (
-      <ul>
-        {countries.map((country) => (
-          <li key={country.iso_code}>
-            <Link href={`/countries/${country.slug}`}>
-              <a>{country.emoji} - {country.location} = {country.population}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    )}
+    <Header
+      title='Countries'
+      description='All countries alphabetically'
+      image='https://picsum.photos/1000/400'
+    />
+    <Breadcrumbs pages={[
+    {
+      name: 'Countries',
+      href: '/countries',
+      current: true
+      }
+    ]} />
+    <Table items={countries} title='All Countries' />
     <h1></h1>
   </div>
 );

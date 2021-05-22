@@ -23,5 +23,6 @@ export interface ICountry {
   extreme_poverty?:            number;
   female_smokers?:             number;
   male_smokers?:               number;
+  score?:                      number;
   data:                        IData[];
 }

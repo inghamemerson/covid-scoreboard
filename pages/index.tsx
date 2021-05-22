@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
-import Link from 'next/link';
 import { ICountry } from '../@types/ICountry';
+import { Header, Table } from '../components';
 
 interface IHome {
   top10: ICountry[];
@@ -15,42 +15,16 @@ const Home = ({ top10, bottom10 }: IHome) => (
       <title>Covid Scoreboard</title>
       <meta name="description" content="Indexing all countries" />
     </Head>
-    {top10 && top10.length > 0 && (
-      <ul>
-        {top10.map((country) => (
-          <li key={country.iso_code}>
-            <Link href={`/countries/${country.slug}`}>
-              <a>{country.emoji} - {country.location} = {country.population}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    )}
-    {bottom10 && bottom10.length > 0 && (
-      <ul>
-        {bottom10.map((country) => (
-          <li key={country.iso_code}>
-            <Link href={`/countries/${country.slug}`}>
-              <a>{country.emoji} - {country.location} = {country.population}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    )}
-    <p>
-      <Link href='/scoreboard'>
-        <a>
-          Scoreboard
-        </a>
-      </Link>
-    </p>
-    <p>
-      <Link href='/countries'>
-        <a>
-          List All Countries
-        </a>
-      </Link>
-    </p>
+    <div>
+      <Header
+        title='COVID Scoreboard'
+        description='Comparing how various countries performed in response to the COVID pandemic'
+        image='https://picsum.photos/1000/400'
+      />
+      {/* <Breadcrumbs /> */}
+      <Table items={top10} title='Top 10 Countries' />
+      <Table items={bottom10} title='Bottom 10 Countries' />
+    </div>
   </div>
 );
 

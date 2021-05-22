@@ -39,6 +39,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       select: {
         emoji: true,
         iso_code: true,
+        slug: true,
         location: true,
         population: true,
         gdp_per_capita: true,
