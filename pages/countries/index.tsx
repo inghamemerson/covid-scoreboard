@@ -1,19 +1,23 @@
 import React from 'react';
+import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { PrismaClient } from '@prisma/client';
 import { ICountry } from '../../@types/ICountry';
 
 interface ICountryIndex {
-  countries: ICountry[]
+  countries: ICountry[];
 }
 
 const CountryIndex = ({ countries }: ICountryIndex) => (
-  <>
+  <div>
+    <Head>
+      <title>Countries | Covid Scoreboard</title>
+      <meta name="description" content="Indexing all countries" />
+    </Head>
     {countries && countries.length > 0 && (
       <ul>
         {countries.map((country) => (
-          <li>
+          <li key={country.iso_code}>
             <Link href={`/countries/${country.slug}`}>
               <a>{country.emoji} - {country.location} = {country.population}</a>
             </Link>
@@ -22,21 +26,15 @@ const CountryIndex = ({ countries }: ICountryIndex) => (
       </ul>
     )}
     <h1></h1>
-  </>
-)
-
+  </div>
+);
 
 export const getStaticProps: GetStaticProps = async () => {
-    const prisma = new PrismaClient();
-    const countries = await prisma.country.findMany({
-    where: { NOT: [{ emoji: null }] },
-    orderBy: [
-      {
-        location: 'asc'
-      }
-    ]
-  })
-  return { props: { countries } }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/countries`);
+  const data = await res.json();
+  let countries: ICountry[] | string[] = data;
+
+  return { props: { countries } };
 };
 
 export default CountryIndex;
