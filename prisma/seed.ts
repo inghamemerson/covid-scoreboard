@@ -8,7 +8,6 @@ import * as closures from '../.data/closures.json';
 import * as unemployment from '../.data/unemployment.json';
 import * as fertility2020 from '../.data/total-fertility-2020.json';
 import * as fertility2021 from '../.data/total-fertility-2021.json';
-import { now } from 'lodash';
 
 const prisma = new PrismaClient();
 
@@ -82,28 +81,32 @@ async function main() {
   // add covid data
   console.log("\nInserting Data\n");
   const dataInsert = await Promise.all(
-    Object.keys(data).map((country) => {
+    Object.keys(refCountries).map(async (country) => {
       // @ts-ignore
-      const newItemData = data[country].data;
-      if (newItemData && newItemData.length) {
-        newItemData.map(async (newData: any) => {
-        const dataInsert = await prisma.data.create({
-          data: {
-            // @ts-ignore
-            country_id: country ? country : undefined,
-            // @ts-ignore
-            date: newData.date ? new Date(newData.date).toISOString() : now(),
-            total_cases: newData.total_cases ? newData.total_cases : undefined,
-            total_deaths: newData.total_deaths ? newData.total_deaths : undefined,
-            total_vaccinations: newData.total_vaccinations ? newData.total_vaccinations : undefined,
-            people_vaccinated: newData.people_vaccinated ? newData.people_vaccinated : undefined,
-            people_fully_vaccinated: newData.people_fully_vaccinated ? newData.people_fully_vaccinated : undefined,
-          },
-        });
-        process.stdout.write('.');
-        return dataInsert;
-      });
-      }
+      const iso = refCountries[country].iso_code;
+      // @ts-ignore
+      if (iso && data[iso] && data[iso].data && data[iso].data.length) {
+        // @ts-ignore
+        const newItemData = data[iso].data[data[iso].data.length - 1];
+        console.log(newItemData);
+        if (newItemData) {
+          const dataInsert = await prisma.data.create({
+            data: {
+              country_id: iso,
+              // @ts-ignore
+              total_cases: Math.max.apply(Math, data[iso].data.map(function(item) { return item.total_cases ? item.total_cases : 0; })),
+              // @ts-ignore
+              total_deaths: Math.max.apply(Math, data[iso].data.map(function(item) { return item.total_deaths ? item.total_deaths : 0; })),
+              // @ts-ignore
+              total_vaccinations: Math.max.apply(Math, data[iso].data.map(function(item) { return item.total_vaccinations ? item.total_vaccinations : 0; })),
+              // @ts-ignore
+              people_fully_vaccinated: Math.max.apply(Math, data[iso].data.map(function(item) { return item.people_fully_vaccinated ? item.people_fully_vaccinated : 0; })),
+            },
+          });
+            process.stdout.write('.');
+            return dataInsert;
+        };
+      };
     })
   );
 
@@ -114,7 +117,7 @@ async function main() {
       // @ts-ignore
       const newClosuresItem = closures[item];
       if (newClosuresItem && newClosuresItem.ISO3 && haveCountryISO(refCountries, newClosuresItem.ISO3)) {
-        const newClosuresInsert = await prisma.closure.create({
+        const newClosuresInsert = await prisma.schoolClosure.create({
           data: {
             // @ts-ignore
             country_id: newClosuresItem.ISO3 ? newClosuresItem.ISO3 : undefined,

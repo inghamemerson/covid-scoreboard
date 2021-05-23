@@ -1,6 +1,6 @@
 import { ICountry } from "./ICountry";
 
-export interface IClosure {
+export interface ISchoolClosure {
   country?:                       ICountry;
   country_id?:                    string;
   income_group?:                  string;

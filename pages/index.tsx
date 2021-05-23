@@ -29,12 +29,12 @@ const Home = ({ top10, bottom10 }: IHome) => (
 );
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const top10Res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/countries/rollup`);
-  const bottom10Res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/countries/rollup?type=bottom`);
-  const top10Data = await top10Res.json();
-  const bottom10Data = await bottom10Res.json();
-  let top10: ICountry[] | string[] = top10Data;
-  let bottom10: ICountry[] | string[] = bottom10Data;
+  const top = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/countries/scoreboard`);
+  const bottom = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/countries/scoreboard?type=reverse`);
+  const top10Data = await top.json();
+  const bottom10Data = await bottom.json();
+  let top10: ICountry[] | string[] = top10Data.splice(0, 10);
+  let bottom10: ICountry[] | string[] = bottom10Data.splice(0, 10);
 
   return { props: { top10, bottom10 } };
 };

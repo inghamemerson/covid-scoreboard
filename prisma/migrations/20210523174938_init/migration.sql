@@ -23,11 +23,9 @@ CREATE TABLE "Country" (
 CREATE TABLE "Data" (
     "id" SERIAL NOT NULL,
     "country_id" TEXT,
-    "date" TIMESTAMP(3) NOT NULL,
     "total_cases" DOUBLE PRECISION,
     "total_deaths" DOUBLE PRECISION,
     "total_vaccinations" DOUBLE PRECISION,
-    "people_vaccinated" DOUBLE PRECISION,
     "people_fully_vaccinated" DOUBLE PRECISION,
 
     PRIMARY KEY ("id")
@@ -54,7 +52,7 @@ CREATE TABLE "Fertility" (
 );
 
 -- CreateTable
-CREATE TABLE "Closure" (
+CREATE TABLE "SchoolClosure" (
     "id" SERIAL NOT NULL,
     "country_id" TEXT,
     "income_group" TEXT,
@@ -75,13 +73,13 @@ CREATE TABLE "Closure" (
 CREATE UNIQUE INDEX "Country.slug_unique" ON "Country"("slug");
 
 -- AddForeignKey
-ALTER TABLE "Unemployment" ADD FOREIGN KEY ("country_id") REFERENCES "Country"("iso_code") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE "Data" ADD FOREIGN KEY ("country_id") REFERENCES "Country"("iso_code") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Closure" ADD FOREIGN KEY ("country_id") REFERENCES "Country"("iso_code") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "Unemployment" ADD FOREIGN KEY ("country_id") REFERENCES "Country"("iso_code") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "SchoolClosure" ADD FOREIGN KEY ("country_id") REFERENCES "Country"("iso_code") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Fertility" ADD FOREIGN KEY ("country_id") REFERENCES "Country"("iso_code") ON DELETE SET NULL ON UPDATE CASCADE;

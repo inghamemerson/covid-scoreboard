@@ -1,37 +1,128 @@
-interface IFatalityRation {
-  total_cases: number | null
-  total_deaths: number | null
-}
+import { ICountry } from "../@types/ICountry";
 
-export const fatalityRatio = ({ total_cases, total_deaths }: IFatalityRation): number => {
-  if (total_cases && total_deaths) {
-    return ((total_deaths / total_cases) * 100);
+export const deathScore = (country: ICountry): number | null => {
+  // @ts-ignore
+  if (country.population && country?.data[0]?.total_deaths) {
+    if (country?.data[0]?.total_deaths > country.population) {
+      return null;
+    }
+    return 100 - ((country.data[0].total_deaths / country.population) * 100);
   };
-  return 100;
+  return null;
 };
 
-interface IdeathPercentage {
-  population: number | null
-  total_deaths: number | null
-}
-
-export const deathPercentage = ({ population, total_deaths }: IdeathPercentage): number => {
-  if (population && total_deaths) {
-    return ((total_deaths / population) * 100);
+export const vaccineScore = (country: ICountry): number | null => {
+  // @ts-ignore
+  if (country.population && country?.data[0]?.people_fully_vaccinated) {
+    if (country?.data[0]?.people_fully_vaccinated > country.population) {
+      return null;
+    }
+    return ((country.data[0].people_fully_vaccinated / country.population) * 100);
   };
-  return 100;
+  return null;
 };
 
-interface IVaccinePercentage {
-  population: number | null;
-  total_vaccinations: number | null;
+export const econScore = (country: ICountry): number | null => {
+  const data2019 = country.unemployment?.find((u) => u.year === 2019);
+  const data2020 = country.unemployment?.find((u) => u.year === 2020);
+
+  if (data2019?.value && data2020?.value) {
+    return ((data2020.value - data2019.value) / data2019.value) * 100;
+  };
+  return null;
 }
 
-export const vaccinePercentage = ({ population, total_vaccinations }: IVaccinePercentage): number => {
-  if (population && total_vaccinations) {
-    return ((total_vaccinations / population) * 100);
-  };
-  return 100;
+export const socialScore = (country: ICountry): number | null => {
+  const scores: number[] = [];
+  const fertility2020 = country.fertility?.find((f) => f.year === 2020);
+  const fertility2021 = country.fertility?.find((f) => f.year === 2021);
+  let days_fully_closed = null;
+  let instruction_days = null;
+
+  // @ts-ignore
+  if (country?.schoolClosure[0] && typeof country?.schoolClosure[0] != 'undefined') {
+    days_fully_closed = country.schoolClosure[0].days_fully_closed;
+    instruction_days = country.schoolClosure[0].instruction_days;
+  }
+
+  const canScoreFertility = fertility2020?.value && typeof fertility2020?.value != 'undefined' && fertility2021?.value && typeof fertility2021?.value != 'undefined';
+  const canScoreClosures = days_fully_closed && typeof days_fully_closed != 'undefined' && instruction_days && typeof instruction_days != 'undefined';
+
+  if (canScoreFertility) {
+    // @ts-ignore
+    const fertilityScore = ((fertility2020.value - fertility2021.value) / fertility2020.value) * 100;
+    if (fertilityScore && fertilityScore != 0) {
+      scores.push(fertilityScore);
+    }
+  }
+
+  if (canScoreClosures) {
+    // @ts-ignore
+    const closureScore = 100 - ((days_fully_closed / instruction_days) * 100);
+    if (closureScore && closureScore != 0) {
+      scores.push(closureScore);
+    }
+  }
+
+  if (scores.length) {
+    return scores.reduce((a, b) => a + b, 0) / scores.length;
+  }
+
+  return null;
+}
+
+const calculateCompositeScore = (country: ICountry, weights: IWeights) => {
+  const scores: number[] = [];
+  let scoreCount = 0;
+  Object.keys(weights).forEach((weight) => {
+    // @ts-ignore
+    if (country[weight] && weights[weight] != 0) {
+      // @ts-ignore
+      scores.push(country[weight] * weights[weight]);
+      scoreCount++;
+    }
+  });
+
+  return scores.reduce((a, b) => a + b, 0) / scoreCount;
 };
+
+export const ranked = (countries: ICountry[], reversed: boolean = false): ICountry[] => {
+  const ranked = countries.sort((a, b) => {
+    if (reversed) {
+      return a.overallScore > b.overallScore ? 1 : -1;
+    }
+    return a.overallScore > b.overallScore ? -1 : 1;
+  });
+
+  return ranked;
+}
+
+interface IWeights {
+  deathScore: number;
+  vaccScore: number;
+  econScore: number;
+  socialScore: number;
+}
+
+export const scoreCountries = (countries: ICountry[] | null, weights: IWeights,): ICountry[] => {
+  if (countries) {
+    const scoredCountries = countries.map((country) => {
+      const scoredCountry = {
+        ...country,
+        deathScore: deathScore(country),
+        vaccScore: vaccineScore(country),
+        econScore: econScore(country),
+        socialScore: socialScore(country)
+      };
+      scoredCountry.overallScore = calculateCompositeScore(scoredCountry, weights);
+      return scoredCountry;
+    });
+
+    return scoredCountries;
+  };
+
+  return [];
+}
+
 
 // export const composite

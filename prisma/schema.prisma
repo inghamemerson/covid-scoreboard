@@ -11,9 +11,9 @@ generator client {
 }
 
 model Country {
-  id                      Int            @default(autoincrement())
-  iso_code                String         @id
-  slug                    String         @unique
+  id                      Int             @default(autoincrement())
+  iso_code                String          @id
+  slug                    String          @unique
   emoji                   String?
   continent               String?
   location                String?
@@ -29,18 +29,16 @@ model Country {
   data                    Data[]
   unemployment            Unemployment[]
   fertility               Fertility[]
-  closure                 Closure[]
+  schoolClosure           SchoolClosure[]
 }
 
 model Data {
   id                      Int      @id @default(autoincrement())
   country                 Country? @relation(fields: [country_id], references: [iso_code])
   country_id              String?
-  date                    DateTime
   total_cases             Float?
   total_deaths            Float?
   total_vaccinations      Float?
-  people_vaccinated       Float?
   people_fully_vaccinated Float?
 }
 
@@ -60,7 +58,7 @@ model Fertility {
   value      Float?
 }
 
-model Closure {
+model SchoolClosure {
   id                    Int      @id @default(autoincrement())
   country               Country? @relation(fields: [country_id], references: [iso_code])
   country_id            String?
