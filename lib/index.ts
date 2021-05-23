@@ -81,6 +81,9 @@ const calculateCompositeScore = (country: ICountry, weights: IWeights) => {
       scores.push(country[weight] * weights[weight]);
       // @ts-ignore
       scoreCount += weights[weight];
+    } else {
+      scores.push(0);
+      scoreCount++;
     }
   });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { ICountry } from '../@types/ICountry';
 
 interface ITable {
@@ -58,13 +58,21 @@ export const Table = ({ title, items }: ITable) => (
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-900">{country.location}</div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowra">
+                    <td className="px-6 py-4 whitespace-nowrap">
                       <p className="text-lg text-black">{country.overallBenchmarked?.toFixed(2)}</p>
                       <p className="text-sm text-gray-500">
+                        <span>Benchmarks: </span>
                         <span>Disease: {country.deathBenchmarked?.toFixed(2)} | </span>
                         <span>Vaccination: {country.vaccBenchmarked?.toFixed(2)} | </span>
                         <span>Economy: {country.econBenchmarked?.toFixed(2)} | </span>
                         <span>Social: {country.socialBenchmarked?.toFixed(2)}</span>
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        <span>Scores: </span>
+                        <span>Disease: {country.deathScore?.toFixed(2)} | </span>
+                        <span>Vaccination: {country.vaccScore?.toFixed(2)} | </span>
+                        <span>Economy: {country.econScore?.toFixed(2)} | </span>
+                        <span>Social: {country.socialScore?.toFixed(2)}</span>
                       </p>
                     </td>
                     {/* <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
