@@ -13,8 +13,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           },
       });
 
-      const scored = scoreCountries([result]);
-      res.json(scored);
+      res.json(result);
     }
   } catch (e) {
     res.status(500).send(e);

@@ -79,7 +79,8 @@ const calculateCompositeScore = (country: ICountry, weights: IWeights) => {
     if (country[weight] && weights[weight] != 0) {
       // @ts-ignore
       scores.push(country[weight] * weights[weight]);
-      scoreCount++;
+      // @ts-ignore
+      scoreCount += weights[weight];
     }
   });
 
@@ -89,9 +90,11 @@ const calculateCompositeScore = (country: ICountry, weights: IWeights) => {
 export const ranked = (countries: ICountry[], reversed: boolean = false): ICountry[] => {
   const ranked = countries.sort((a, b) => {
     if (reversed) {
-      return a.overallScore > b.overallScore ? 1 : -1;
+      // @ts-ignore
+      return a.overallBenchmarked > b.overallBenchmarked ? 1 : -1;
     }
-    return a.overallScore > b.overallScore ? -1 : 1;
+    // @ts-ignore
+    return a.overallBenchmarked > b.overallBenchmarked ? -1 : 1;
   });
 
   return ranked;
@@ -104,6 +107,20 @@ interface IWeights {
   socialScore: number;
 }
 
+const normalize = (countries: ICountry[], country: ICountry, key: string): number | null => {
+  // @ts-ignore
+  if (country[key]) {
+    // @ts-ignore
+    const min = Math.min.apply(Math, countries.map(function(item) { return item[key] ? item[key] : 0; }));
+    // @ts-ignore
+    const max = Math.max.apply(Math, countries.map(function(item) { return item[key] ? item[key] : 0; }));
+    // @ts-ignore
+    return ((country[key] - min) / (max - min)) * 100;
+  }
+
+  return null;
+};
+
 export const scoreCountries = (countries: ICountry[] | null, weights: IWeights,): ICountry[] => {
   if (countries) {
     const scoredCountries = countries.map((country) => {
@@ -114,11 +131,22 @@ export const scoreCountries = (countries: ICountry[] | null, weights: IWeights,)
         econScore: econScore(country),
         socialScore: socialScore(country)
       };
-      scoredCountry.overallScore = calculateCompositeScore(scoredCountry, weights);
       return scoredCountry;
     });
 
-    return scoredCountries;
+    const benchmarkedCountries = scoredCountries.map((country) => {
+      const benchmarked = {
+        ...country,
+        deathBenchmarked: normalize(scoredCountries, country, "deathScore"),
+        vaccBenchmarked: normalize(scoredCountries, country, "vaccScore"),
+        econBenchmarked: normalize(scoredCountries, country, "econScore"),
+        socialBenchmarked: normalize(scoredCountries, country, "socialScore")
+      };
+      benchmarked.overallBenchmarked = calculateCompositeScore(benchmarked, weights);
+      return benchmarked;
+    });
+
+    return benchmarkedCountries;
   };
 
   return [];

@@ -12,9 +12,9 @@ export interface ICountry {
   location:                    string | null;
   population:                  number | null;
   population_density:          number | null;
-  median_age?:                  number | null;
-  aged_65_older?:               number | null;
-  aged_70_older?:               number | null;
+  median_age?:                 number | null;
+  aged_65_older?:              number | null;
+  aged_70_older?:              number | null;
   gdp_per_capita:              number | null;
   life_expectancy:             number | null;
   human_development_index:     number | null;
@@ -23,9 +23,14 @@ export interface ICountry {
   vaccScore?:                  number | null;
   econScore?:                  number | null;
   socialScore?:                number | null;
-  overallScore?:                number | null;
+  overallScore?:               number | null;
+  deathBenchmarked:            number | null;
+  vaccBenchmarked:             number | null;
+  econBenchmarked:             number | null;
+  socialBenchmarked:           number | null;
+  overallBenchmarked:          number | null;
   data?:                       IData[];
-  schoolClosure?:             ISchoolClosure[];
+  schoolClosure?:              ISchoolClosure[];
   unemployment?:               IUnemployment[];
   fertility?:                  IFertility[];
 }

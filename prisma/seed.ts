@@ -1,4 +1,3 @@
-
 import { PrismaClient } from '@prisma/client';
 import _kebabCase from 'lodash/kebabCase';
 import * as data from '../.data/owid-covid-data.json';
@@ -88,7 +87,6 @@ async function main() {
       if (iso && data[iso] && data[iso].data && data[iso].data.length) {
         // @ts-ignore
         const newItemData = data[iso].data[data[iso].data.length - 1];
-        console.log(newItemData);
         if (newItemData) {
           const dataInsert = await prisma.data.create({
             data: {

@@ -9,7 +9,7 @@ interface ICountryIndex {
 }
 
 const CountryIndex = ({ countries }: ICountryIndex) => (
-  <div>
+  <div className="bg-gray-100 pb-20">
     <Head>
       <title>Countries | Covid Scoreboard</title>
       <meta name="description" content="Indexing all countries" />

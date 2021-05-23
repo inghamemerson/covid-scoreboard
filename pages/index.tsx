@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { GetServerSideProps } from 'next';
 import { ICountry } from '../@types/ICountry';
 import { Header, Table } from '../components';
@@ -10,7 +11,7 @@ interface IHome {
 }
 
 const Home = ({ top10, bottom10 }: IHome) => (
-  <div>
+  <div className="bg-gray-100 pb-20">
     <Head>
       <title>Covid Scoreboard</title>
       <meta name="description" content="Indexing all countries" />
@@ -22,6 +23,21 @@ const Home = ({ top10, bottom10 }: IHome) => (
         image='https://picsum.photos/1000/400'
       />
       {/* <Breadcrumbs /> */}
+      <div className="relative max-w-7xl mx-auto my-16 px-4 sm:my-20 sm:px-6 lg:px-8">
+        <div className="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
+          <div className="mt-5 md:mt-0">
+            <h2 className="text-xl mb-6">Build your own</h2>
+            <p className="txt-md mb-4">Using the scoreboard, you can update scoring weights and filter various aspects to build your own rankings.</p>
+            <Link href="/scoreboard">
+              <a
+                className="py-2 border border-transparent text-lg font-medium rounded-md text-indigo-600 hover:text-indigo-700 focus:outline-none "
+              >
+                Check it out
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
       <Table items={top10} title='Top 10 Countries' />
       <Table items={bottom10} title='Bottom 10 Countries' />
     </div>
