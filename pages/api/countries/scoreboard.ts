@@ -47,34 +47,20 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
       case '1m-10m':
         // @ts-ignore
-        where.AND = where.AND || [
-          {
-            population: {
-              gte: 1000000
-            }
-          },
-          {
-            population: {
-              lte: 10000000
-            }
-          }
-        ]
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({population: {gte: 1000000}});
+        // @ts-ignore
+        where.AND.push({population: {lte: 10000000}});
         break;
 
       case '10m-100m':
         // @ts-ignore
-        where.AND = where.AND || [
-          {
-            population: {
-              gte: 10000000
-            }
-          },
-          {
-            population: {
-              lte: 100000000
-            }
-          }
-        ]
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({population: {gte: 10000000}});
+        // @ts-ignore
+        where.AND.push({population: {lte: 100000000}});
         break;
 
       case '>100m':
@@ -100,40 +86,170 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
       case 'med':
         // @ts-ignore
-        where.AND = where.AND || [
-          {
-            gdp_per_capita: {
-              gte: 10000
-            }
-          },
-          {
-            gdp_per_capita: {
-              lte: 25000
-            }
-          }
-        ]
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({gdp_per_capita: {gte: 10000}});
+        // @ts-ignore
+        where.AND.push({gdp_per_capita: {lte: 25000}});
         break;
 
       case 'lg':
         // @ts-ignore
-        where.AND = where.AND || [
-          {
-            gdp_per_capita: {
-              gte: 25000
-            }
-          },
-          {
-            gdp_per_capita: {
-              lte: 50000
-            }
-          }
-        ]
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({gdp_per_capita: {gte: 25000}});
+        // @ts-ignore
+        where.AND.push({gdp_per_capita: {lte: 50000}});
         break;
 
       case 'xl':
         // @ts-ignore
         where.gdp_per_capita = {
           gt: 50000
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  if (parsedFilters?.median_age) {
+    switch (parsedFilters.median_age) {
+      case '<20':
+        // @ts-ignore
+        where.median_age = {
+          lt: 20
+        }
+        break;
+
+      case '20-30':
+        // @ts-ignore
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({median_age: {gte: 20}});
+        // @ts-ignore
+        where.AND.push({median_age: {lte: 30}});
+        break;
+
+      case '30-40':
+        // @ts-ignore
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({median_age: {gte: 30}});
+        // @ts-ignore
+        where.AND.push({median_age: {lte: 40}});
+        break;
+
+      case '>40':
+        // @ts-ignore
+        where.median_age = {
+          gt: 40
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  if (parsedFilters?.life_expectancy) {
+    switch (parsedFilters.life_expectancy) {
+      case '<60':
+        // @ts-ignore
+        where.life_expectancy = {
+          lt: 60
+        }
+        break;
+
+      case '60-65':
+        // @ts-ignore
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({life_expectancy: {gte: 60}});
+        // @ts-ignore
+        where.AND.push({life_expectancy: {lte: 65}});
+        break;
+
+      case '65-70':
+        // @ts-ignore
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({life_expectancy: {gte: 65}});
+        // @ts-ignore
+        where.AND.push({life_expectancy: {lte: 70}});
+        break;
+
+      case '70-75':
+        // @ts-ignore
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({life_expectancy: {gte: 70}});
+        // @ts-ignore
+        where.AND.push({life_expectancy: {lte: 75}});
+        break;
+
+      case '>75':
+        // @ts-ignore
+        where.life_expectancy = {
+          gt: 75
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
+
+if (parsedFilters?.human_development_index) {
+    switch (parsedFilters.human_development_index) {
+      case '<.5':
+        // @ts-ignore
+        where.human_development_index = {
+          lt: .5
+        }
+        break;
+
+      case '.5-.6':
+        // @ts-ignore
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({human_development_index: {gte: .5}});
+        // @ts-ignore
+        where.AND.push({human_development_index: {lte: .6}});
+        break;
+
+      case '.6-.7':
+        // @ts-ignore
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({human_development_index: {gte: .6}});
+        // @ts-ignore
+        where.AND.push({human_development_index: {lte: .7}});
+        break;
+
+      case '.7-.8':
+        // @ts-ignore
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({human_development_index: {gte: .7}});
+        // @ts-ignore
+        where.AND.push({human_development_index: {lte: .8}});
+        break;
+
+      case '.8-.9':
+        // @ts-ignore
+        where.AND = where.AND || [];
+        // @ts-ignore
+        where.AND.push({human_development_index: {gte: .8}});
+        // @ts-ignore
+        where.AND.push({human_development_index: {lte: .9}});
+        break;
+
+      case '>.9':
+        // @ts-ignore
+        where.human_development_index = {
+          gt: .9
         }
         break;
 

@@ -4,6 +4,7 @@ interface IFilters {
   continent?: string;
   population?: string;
   gdp_per_capita?: string;
+  median_age?: string;
   life_expectancy?: string;
   human_development_index?: string;
   extreme_poverty?: string;
@@ -26,6 +27,7 @@ export const ReportDetails = ({ submit, setFilters, setWeights }: IReportDetails
   const [continent, setContinent] = useState('');
   const [population, setPopulation] = useState('');
   const [gdpPerCapita, setGDPPerCapita] = useState('');
+  const [medianAge, setMedianAge] = useState('');
   const [lifeExpectancy, setLifeExpectancy] = useState('');
   const [humanDevelopmentIndex, setHumanDevelopmentIndex] = useState('');
   const [extremePoverty, setExtremePoverty] = useState('');
@@ -39,6 +41,7 @@ export const ReportDetails = ({ submit, setFilters, setWeights }: IReportDetails
       continent: continent,
       population: population,
       gdp_per_capita: gdpPerCapita,
+      median_age: medianAge,
       life_expectancy: lifeExpectancy,
       human_development_index: humanDevelopmentIndex,
       extreme_poverty: extremePoverty
@@ -117,6 +120,66 @@ export const ReportDetails = ({ submit, setFilters, setWeights }: IReportDetails
                   <option value='xl'>Greater than $50,000</option>
                 </select>
               </div>
+
+              <div className="col-span-12 sm:col-span-3 md:col-span-4">
+                <label htmlFor="country" className="block text-sm font-medium text-gray-700">
+                  Median Age
+                </label>
+                <select
+                  id="age"
+                  name="age"
+                  onChange={e => setMedianAge(e.target.value)}
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                >
+                  <option value=''>All</option>
+                  <option value='<20>'>Less Than 20</option>
+                  <option value='20-30'>20 - 30</option>
+                  <option value='30-40'>30 - 40</option>
+                  <option value='>40'>Greater than 40</option>
+                </select>
+              </div>
+
+              <div className="col-span-12 sm:col-span-3 md:col-span-4">
+                <label htmlFor="country" className="block text-sm font-medium text-gray-700">
+                  Life Expectancy
+                </label>
+                <select
+                  id="le"
+                  name="le"
+                  onChange={e => setLifeExpectancy(e.target.value)}
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                >
+                  <option value=''>All</option>
+                  <option value='<60>'>Less than 60</option>
+                  <option value='60-65'>60 - 65</option>
+                  <option value='65-70'>65 - 70</option>
+                  <option value='70-75'>70 - 75</option>
+                  <option value='>75'>Greater than 75</option>
+                </select>
+              </div>
+
+              <div className="col-span-12 sm:col-span-3 md:col-span-4">
+                <label htmlFor="country" className="block text-sm font-medium text-gray-700">
+                  Human Development Index
+                </label>
+                <select
+                  id="hdi"
+                  name="hdi"
+                  onChange={e => setHumanDevelopmentIndex(e.target.value)}
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                >
+                  <option value=''>All</option>
+                  <option value='<.5'>Less than 0.5</option>
+                  <option value='.5-.6'>0.5 - 0.6</option>
+                  <option value='.6-.7'>0.6 - 0.7</option>
+                  <option value='.7-.8'>0.7 - 0.8</option>
+                  <option value='.8-.9'>0.8 - 0.9</option>
+                  <option value='>.9'>Greate than 0.9</option>
+                </select>
+              </div>
+
+            </div>
+            <div className="space-y-6 md:grid md:grid-cols-12 md:gap-6 items-baseline">
 
               <div className="col-span-12 sm:col-span-6 md:col-span-3">
                 <label htmlFor="country" className="block text-sm font-medium text-gray-700">
