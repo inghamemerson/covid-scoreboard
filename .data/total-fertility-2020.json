@@ -1,0 +1,1137 @@
+[
+  {
+  "name": "Niger",
+  "rate": 7.00,
+  "year": 2020
+  },
+  {
+  "name": "Angola",
+  "rate": 5.96,
+  "year": 2020
+  },
+  {
+  "name": "Democratic Republic of congo",
+  "rate": 5.77,
+  "year": 2020
+  },
+  {
+  "name": "Mali",
+  "rate": 5.72,
+  "year": 2020
+  },
+  {
+  "name": "Chad",
+  "rate": 5.68,
+  "year": 2020
+  },
+  {
+  "name": "South Sudan",
+  "rate": 5.54,
+  "year": 2020
+  },
+  {
+  "name": "Uganda",
+  "rate": 5.54,
+  "year": 2020
+  },
+  {
+  "name": "Benin",
+  "rate": 5.53,
+  "year": 2020
+  },
+  {
+  "name": "Somalia",
+  "rate": 5.51,
+  "year": 2020
+  },
+  {
+  "name": "Zambia",
+  "rate": 5.49,
+  "year": 2020
+  },
+  {
+  "name": "Malawi",
+  "rate": 5.31,
+  "year": 2020
+  },
+  {
+  "name": "Burundi",
+  "rate": 5.28,
+  "year": 2020
+  },
+  {
+  "name": "Mozambique",
+  "rate": 4.97,
+  "year": 2020
+  },
+  {
+  "name": "Guinea",
+  "rate": 4.92,
+  "year": 2020
+  },
+  {
+  "name": "Liberia",
+  "rate": 4.90,
+  "year": 2020
+  },
+  {
+  "name": "Afghanistan",
+  "rate": 4.82,
+  "year": 2020
+  },
+  {
+  "name": "Guinea-Bissau",
+  "rate": 4.75,
+  "year": 2020
+  },
+  {
+  "name": "Nigeria",
+  "rate": 4.72,
+  "year": 2020
+  },
+  {
+  "name": "Sudan",
+  "rate": 4.72,
+  "year": 2020
+  },
+  {
+  "name": "Cameroon",
+  "rate": 4.66,
+  "year": 2020
+  },
+  {
+  "name": "Sierra Leone",
+  "rate": 4.62,
+  "year": 2020
+  },
+  {
+  "name": "Tanzania",
+  "rate": 4.59,
+  "year": 2020
+  },
+  {
+  "name": "Burkina Faso",
+  "rate": 4.51,
+  "year": 2020
+  },
+  {
+  "name": "congo",
+  "rate": 4.45,
+  "year": 2020
+  },
+  {
+  "name": "Timor",
+  "rate": 4.44,
+  "year": 2020
+  },
+  {
+  "name": "Togo",
+  "rate": 4.22,
+  "year": 2020
+  },
+  {
+  "name": "Central African Republic",
+  "rate": 4.14,
+  "year": 2020
+  },
+  {
+  "name": "Ethiopia",
+  "rate": 4.14,
+  "year": 2020
+  },
+  {
+  "name": "Equatorial Guinea",
+  "rate": 4.11,
+  "year": 2020
+  },
+  {
+  "name": "Senegal",
+  "rate": 4.04,
+  "year": 2020
+  },
+  {
+  "name": "Zimbabwe",
+  "rate": 3.93,
+  "year": 2020
+  },
+  {
+  "name": "Ghana",
+  "rate": 3.90,
+  "year": 2020
+  },
+  {
+  "name": "Sao Tome and Principe",
+  "rate": 3.82,
+  "year": 2020
+  },
+  {
+  "name": "Madagascar",
+  "rate": 3.78,
+  "year": 2020
+  },
+  {
+  "name": "Eritrea",
+  "rate": 3.73,
+  "year": 2020
+  },
+  {
+  "name": "Cote d-Ivoire",
+  "rate": 3.67,
+  "year": 2020
+  },
+  {
+  "name": "Mauritania",
+  "rate": 3.65,
+  "year": 2020
+  },
+  {
+  "name": "Gaza Strip",
+  "rate": 3.64,
+  "year": 2020
+  },
+  {
+  "name": "Pakistan",
+  "rate": 3.60,
+  "year": 2020
+  },
+  {
+  "name": "Rwanda",
+  "rate": 3.52,
+  "year": 2020
+  },
+  {
+  "name": "Kenya",
+  "rate": 3.43,
+  "year": 2020
+  },
+  {
+  "name": "Gabon",
+  "rate": 3.41,
+  "year": 2020
+  },
+  {
+  "name": "Iraq",
+  "rate": 3.39,
+  "year": 2020
+  },
+  {
+  "name": "Egypt",
+  "rate": 3.29,
+  "year": 2020
+  },
+  {
+  "name": "Gambia",
+  "rate": 3.21,
+  "year": 2020
+  },
+  {
+  "name": "Yemen",
+  "rate": 3.20,
+  "year": 2020
+  },
+  {
+  "name": "Libya",
+  "rate": 3.17,
+  "year": 2020
+  },
+  {
+  "name": "Namibia",
+  "rate": 3.07,
+  "year": 2020
+  },
+  {
+  "name": "West Bank",
+  "rate": 3.07,
+  "year": 2020
+  },
+  {
+  "name": "Jordan",
+  "rate": 3.04,
+  "year": 2020
+  },
+  {
+  "name": "Solomon Islands",
+  "rate": 2.97,
+  "year": 2020
+  },
+  {
+  "name": "Comoros",
+  "rate": 2.95,
+  "year": 2020
+  },
+  {
+  "name": "Philippines",
+  "rate": 2.92,
+  "year": 2020
+  },
+  {
+  "name": "Syria",
+  "rate": 2.90,
+  "year": 2020
+  },
+  {
+  "name": "Tuvalu",
+  "rate": 2.88,
+  "year": 2020
+  },
+  {
+  "name": "Tonga",
+  "rate": 2.87,
+  "year": 2020
+  },
+  {
+  "name": "Marshall Islands",
+  "rate": 2.86,
+  "year": 2020
+  },
+  {
+  "name": "Guam",
+  "rate": 2.84,
+  "year": 2020
+  },
+  {
+  "name": "Papua New Guinea",
+  "rate": 2.84,
+  "year": 2020
+  },
+  {
+  "name": "Vanuatu",
+  "rate": 2.79,
+  "year": 2020
+  },
+  {
+  "name": "Oman",
+  "rate": 2.76,
+  "year": 2020
+  },
+  {
+  "name": "Guatemala",
+  "rate": 2.72,
+  "year": 2020
+  },
+  {
+  "name": "Belize",
+  "rate": 2.70,
+  "year": 2020
+  },
+  {
+  "name": "Northern Mariana Islands",
+  "rate": 2.70,
+  "year": 2020
+  },
+  {
+  "name": "Nauru",
+  "rate": 2.68,
+  "year": 2020
+  },
+  {
+  "name": "Algeria",
+  "rate": 2.59,
+  "year": 2020
+  },
+  {
+  "name": "Israel",
+  "rate": 2.59,
+  "year": 2020
+  },
+  {
+  "name": "Kyrgyzstan",
+  "rate": 2.54,
+  "year": 2020
+  },
+  {
+  "name": "Laos",
+  "rate": 2.53,
+  "year": 2020
+  },
+  {
+  "name": "Eswatini",
+  "rate": 2.52,
+  "year": 2020
+  },
+  {
+  "name": "Haiti",
+  "rate": 2.52,
+  "year": 2020
+  },
+  {
+  "name": "Tajikistan",
+  "rate": 2.51,
+  "year": 2020
+  },
+  {
+  "name": "Lesotho",
+  "rate": 2.50,
+  "year": 2020
+  },
+  {
+  "name": "Samoa",
+  "rate": 2.50,
+  "year": 2020
+  },
+  {
+  "name": "Bolivia",
+  "rate": 2.48,
+  "year": 2020
+  },
+  {
+  "name": "Botswana",
+  "rate": 2.45,
+  "year": 2020
+  },
+  {
+  "name": "Malaysia",
+  "rate": 2.43,
+  "year": 2020
+  },
+  {
+  "name": "Cambodia",
+  "rate": 2.39,
+  "year": 2020
+  },
+  {
+  "name": "American Samoa",
+  "rate": 2.35,
+  "year": 2020
+  },
+  {
+  "name": "India",
+  "rate": 2.35,
+  "year": 2020
+  },
+  {
+  "name": "faeroe Islands",
+  "rate": 2.31,
+  "year": 2020
+  },
+  {
+  "name": "Fiji",
+  "rate": 2.31,
+  "year": 2020
+  },
+  {
+  "name": "Morocco",
+  "rate": 2.31,
+  "year": 2020
+  },
+  {
+  "name": "Micronesia country",
+  "rate": 2.29,
+  "year": 2020
+  },
+  {
+  "name": "Kuwait",
+  "rate": 2.26,
+  "year": 2020
+  },
+  {
+  "name": "Venezuela",
+  "rate": 2.26,
+  "year": 2020
+  },
+  {
+  "name": "Kiribati",
+  "rate": 2.25,
+  "year": 2020
+  },
+  {
+  "name": "Dominican Republic",
+  "rate": 2.24,
+  "year": 2020
+  },
+  {
+  "name": "Panama",
+  "rate": 2.23,
+  "year": 2020
+  },
+  {
+  "name": "South Africa",
+  "rate": 2.22,
+  "year": 2020
+  },
+  {
+  "name": "Argentina",
+  "rate": 2.21,
+  "year": 2020
+  },
+  {
+  "name": "Djibouti",
+  "rate": 2.19,
+  "year": 2020
+  },
+  {
+  "name": "Mexico",
+  "rate": 2.19,
+  "year": 2020
+  },
+  {
+  "name": "Cabo Verde",
+  "rate": 2.16,
+  "year": 2020
+  },
+  {
+  "name": "Kazakhstan",
+  "rate": 2.16,
+  "year": 2020
+  },
+  {
+  "name": "Cook Islands",
+  "rate": 2.12,
+  "year": 2020
+  },
+  {
+  "name": "Bangladesh",
+  "rate": 2.11,
+  "year": 2020
+  },
+  {
+  "name": "Ecuador",
+  "rate": 2.09,
+  "year": 2020
+  },
+  {
+  "name": "El Salvador",
+  "rate": 2.09,
+  "year": 2020
+  },
+  {
+  "name": "Honduras",
+  "rate": 2.09,
+  "year": 2020
+  },
+  {
+  "name": "Burma",
+  "rate": 2.07,
+  "year": 2020
+  },
+  {
+  "name": "Jamaica",
+  "rate": 2.07,
+  "year": 2020
+  },
+  {
+  "name": "France",
+  "rate": 2.06,
+  "year": 2020
+  },
+  {
+  "name": "Tunisia",
+  "rate": 2.06,
+  "year": 2020
+  },
+  {
+  "name": "Indonesia",
+  "rate": 2.04,
+  "year": 2020
+  },
+  {
+  "name": "Peru",
+  "rate": 2.04,
+  "year": 2020
+  },
+  {
+  "name": "Turkmenistan",
+  "rate": 2.04,
+  "year": 2020
+  },
+  {
+  "name": "Virgin Islands",
+  "rate": 2.03,
+  "year": 2020
+  },
+  {
+  "name": "Dominica",
+  "rate": 2.02,
+  "year": 2020
+  },
+  {
+  "name": "Sint Maarten",
+  "rate": 2.02,
+  "year": 2020
+  },
+  {
+  "name": "Sri Lanka",
+  "rate": 2.01,
+  "year": 2020
+  },
+  {
+  "name": "Curacao",
+  "rate": 2.00,
+  "year": 2020
+  },
+  {
+  "name": "Antigua and Barbuda",
+  "rate": 1.97,
+  "year": 2020
+  },
+  {
+  "name": "Iceland",
+  "rate": 1.97,
+  "year": 2020
+  },
+  {
+  "name": "Grenada",
+  "rate": 1.96,
+  "year": 2020
+  },
+  {
+  "name": "Nepal",
+  "rate": 1.96,
+  "year": 2020
+  },
+  {
+  "name": "Turkey",
+  "rate": 1.96,
+  "year": 2020
+  },
+  {
+  "name": "Kosovo",
+  "rate": 1.95,
+  "year": 2020
+  },
+  {
+  "name": "Mongolia",
+  "rate": 1.95,
+  "year": 2020
+  },
+  {
+  "name": "Saudi Arabia",
+  "rate": 1.95,
+  "year": 2020
+  },
+  {
+  "name": "Colombia",
+  "rate": 1.94,
+  "year": 2020
+  },
+  {
+  "name": "Greenland",
+  "rate": 1.94,
+  "year": 2020
+  },
+  {
+  "name": "Iran",
+  "rate": 1.94,
+  "year": 2020
+  },
+  {
+  "name": "Ireland",
+  "rate": 1.94,
+  "year": 2020
+  },
+  {
+  "name": "Bahamas",
+  "rate": 1.92,
+  "year": 2020
+  },
+  {
+  "name": "North Korea",
+  "rate": 1.92,
+  "year": 2020
+  },
+  {
+  "name": "Bermuda",
+  "rate": 1.91,
+  "year": 2020
+  },
+  {
+  "name": "Gibraltar",
+  "rate": 1.90,
+  "year": 2020
+  },
+  {
+  "name": "Isle of Man",
+  "rate": 1.90,
+  "year": 2020
+  },
+  {
+  "name": "Guyana",
+  "rate": 1.89,
+  "year": 2020
+  },
+  {
+  "name": "Paraguay",
+  "rate": 1.89,
+  "year": 2020
+  },
+  {
+  "name": "Azerbaijan",
+  "rate": 1.88,
+  "year": 2020
+  },
+  {
+  "name": "New Caledonia",
+  "rate": 1.88,
+  "year": 2020
+  },
+  {
+  "name": "Qatar",
+  "rate": 1.88,
+  "year": 2020
+  },
+  {
+  "name": "Costa Rica",
+  "rate": 1.87,
+  "year": 2020
+  },
+  {
+  "name": "New Zealand",
+  "rate": 1.87,
+  "year": 2020
+  },
+  {
+  "name": "Sweden",
+  "rate": 1.87,
+  "year": 2020
+  },
+  {
+  "name": "Suriname",
+  "rate": 1.86,
+  "year": 2020
+  },
+  {
+  "name": "United Kingdom",
+  "rate": 1.86,
+  "year": 2020
+  },
+  {
+  "name": "Norway",
+  "rate": 1.84,
+  "year": 2020
+  },
+  {
+  "name": "United States",
+  "rate": 1.84,
+  "year": 2020
+  },
+  {
+  "name": "Aruba",
+  "rate": 1.83,
+  "year": 2020
+  },
+  {
+  "name": "Cayman Islands",
+  "rate": 1.83,
+  "year": 2020
+  },
+  {
+  "name": "French Polynesia",
+  "rate": 1.83,
+  "year": 2020
+  },
+  {
+  "name": "Seychelles",
+  "rate": 1.83,
+  "year": 2020
+  },
+  {
+  "name": "Bhutan",
+  "rate": 1.82,
+  "year": 2020
+  },
+  {
+  "name": "Montenegro",
+  "rate": 1.82,
+  "year": 2020
+  },
+  {
+  "name": "Nicaragua",
+  "rate": 1.82,
+  "year": 2020
+  },
+  {
+  "name": "Saint Martin",
+  "rate": 1.81,
+  "year": 2020
+  },
+  {
+  "name": "Denmark",
+  "rate": 1.78,
+  "year": 2020
+  },
+  {
+  "name": "Belgium",
+  "rate": 1.77,
+  "year": 2020
+  },
+  {
+  "name": "Chile",
+  "rate": 1.77,
+  "year": 2020
+  },
+  {
+  "name": "Netherlands",
+  "rate": 1.77,
+  "year": 2020
+  },
+  {
+  "name": "Saint Kitts and Nevis",
+  "rate": 1.77,
+  "year": 2020
+  },
+  {
+  "name": "Uruguay",
+  "rate": 1.77,
+  "year": 2020
+  },
+  {
+  "name": "Vietnam",
+  "rate": 1.77,
+  "year": 2020
+  },
+  {
+  "name": "Saint Vincent and the Grenadines",
+  "rate": 1.76,
+  "year": 2020
+  },
+  {
+  "name": "Brunei",
+  "rate": 1.75,
+  "year": 2020
+  },
+  {
+  "name": "Georgia",
+  "rate": 1.75,
+  "year": 2020
+  },
+  {
+  "name": "Anguilla",
+  "rate": 1.74,
+  "year": 2020
+  },
+  {
+  "name": "Australia",
+  "rate": 1.74,
+  "year": 2020
+  },
+  {
+  "name": "Finland",
+  "rate": 1.74,
+  "year": 2020
+  },
+  {
+  "name": "Uzbekistan",
+  "rate": 1.74,
+  "year": 2020
+  },
+  {
+  "name": "Brazil",
+  "rate": 1.73,
+  "year": 2020
+  },
+  {
+  "name": "Mauritius",
+  "rate": 1.73,
+  "year": 2020
+  },
+  {
+  "name": "Saint Lucia",
+  "rate": 1.73,
+  "year": 2020
+  },
+  {
+  "name": "United Arab Emirates",
+  "rate": 1.73,
+  "year": 2020
+  },
+  {
+  "name": "Cuba",
+  "rate": 1.71,
+  "year": 2020
+  },
+  {
+  "name": "Lebanon",
+  "rate": 1.71,
+  "year": 2020
+  },
+  {
+  "name": "Maldives",
+  "rate": 1.71,
+  "year": 2020
+  },
+  {
+  "name": "Wallis and Futuna",
+  "rate": 1.71,
+  "year": 2020
+  },
+  {
+  "name": "Palau",
+  "rate": 1.70,
+  "year": 2020
+  },
+  {
+  "name": "Trinidad and Tobago",
+  "rate": 1.70,
+  "year": 2020
+  },
+  {
+  "name": "Turks and Caicos Islands",
+  "rate": 1.70,
+  "year": 2020
+  },
+  {
+  "name": "Bahrain",
+  "rate": 1.69,
+  "year": 2020
+  },
+  {
+  "name": "Liechtenstein",
+  "rate": 1.69,
+  "year": 2020
+  },
+  {
+  "name": "Barbados",
+  "rate": 1.68,
+  "year": 2020
+  },
+  {
+  "name": "Jersey",
+  "rate": 1.67,
+  "year": 2020
+  },
+  {
+  "name": "Armenia",
+  "rate": 1.65,
+  "year": 2020
+  },
+  {
+  "name": "Saint Barthelemy",
+  "rate": 1.64,
+  "year": 2020
+  },
+  {
+  "name": "Luxembourg",
+  "rate": 1.62,
+  "year": 2020
+  },
+  {
+  "name": "Estonia",
+  "rate": 1.61,
+  "year": 2020
+  },
+  {
+  "name": "China",
+  "rate": 1.60,
+  "year": 2020
+  },
+  {
+  "name": "Lithuania",
+  "rate": 1.60,
+  "year": 2020
+  },
+  {
+  "name": "Russia",
+  "rate": 1.60,
+  "year": 2020
+  },
+  {
+  "name": "Saint Helena",
+  "rate": 1.60,
+  "year": 2020
+  },
+  {
+  "name": "Slovenia",
+  "rate": 1.59,
+  "year": 2020
+  },
+  {
+  "name": "Moldova",
+  "rate": 1.58,
+  "year": 2020
+  },
+  {
+  "name": "Saint Pierre and Miquelon",
+  "rate": 1.58,
+  "year": 2020
+  },
+  {
+  "name": "Canada",
+  "rate": 1.57,
+  "year": 2020
+  },
+  {
+  "name": "Guernsey",
+  "rate": 1.57,
+  "year": 2020
+  },
+  {
+  "name": "Switzerland",
+  "rate": 1.57,
+  "year": 2020
+  },
+  {
+  "name": "Ukraine",
+  "rate": 1.56,
+  "year": 2020
+  },
+  {
+  "name": "Monaco",
+  "rate": 1.55,
+  "year": 2020
+  },
+  {
+  "name": "Thailand",
+  "rate": 1.54,
+  "year": 2020
+  },
+  {
+  "name": "Albania",
+  "rate": 1.53,
+  "year": 2020
+  },
+  {
+  "name": "Latvia",
+  "rate": 1.53,
+  "year": 2020
+  },
+  {
+  "name": "San Marino",
+  "rate": 1.52,
+  "year": 2020
+  },
+  {
+  "name": "Spain",
+  "rate": 1.51,
+  "year": 2020
+  },
+  {
+  "name": "Belarus",
+  "rate": 1.50,
+  "year": 2020
+  },
+  {
+  "name": "Macedonia",
+  "rate": 1.50,
+  "year": 2020
+  },
+  {
+  "name": "Austria",
+  "rate": 1.49,
+  "year": 2020
+  },
+  {
+  "name": "Bulgaria",
+  "rate": 1.49,
+  "year": 2020
+  },
+  {
+  "name": "Malta",
+  "rate": 1.49,
+  "year": 2020
+  },
+  {
+  "name": "Cyprus",
+  "rate": 1.48,
+  "year": 2020
+  },
+  {
+  "name": "Czechia",
+  "rate": 1.48,
+  "year": 2020
+  },
+  {
+  "name": "Germany",
+  "rate": 1.47,
+  "year": 2020
+  },
+  {
+  "name": "Hungary",
+  "rate": 1.47,
+  "year": 2020
+  },
+  {
+  "name": "Italy",
+  "rate": 1.47,
+  "year": 2020
+  },
+  {
+  "name": "Serbia",
+  "rate": 1.46,
+  "year": 2020
+  },
+  {
+  "name": "Slovakia",
+  "rate": 1.44,
+  "year": 2020
+  },
+  {
+  "name": "Andorra",
+  "rate": 1.43,
+  "year": 2020
+  },
+  {
+  "name": "Japan",
+  "rate": 1.43,
+  "year": 2020
+  },
+  {
+  "name": "Croatia",
+  "rate": 1.42,
+  "year": 2020
+  },
+  {
+  "name": "Portugal",
+  "rate": 1.41,
+  "year": 2020
+  },
+  {
+  "name": "Greece",
+  "rate": 1.38,
+  "year": 2020
+  },
+  {
+  "name": "Poland",
+  "rate": 1.38,
+  "year": 2020
+  },
+  {
+  "name": "Romania",
+  "rate": 1.38,
+  "year": 2020
+  },
+  {
+  "name": "Montserrat",
+  "rate": 1.36,
+  "year": 2020
+  },
+  {
+  "name": "Bosnia and Herzegovina",
+  "rate": 1.33,
+  "year": 2020
+  },
+  {
+  "name": "British Virgin Islands",
+  "rate": 1.33,
+  "year": 2020
+  },
+  {
+  "name": "South Korea",
+  "rate": 1.29,
+  "year": 2020
+  },
+  {
+  "name": "Puerto Rico",
+  "rate": 1.24,
+  "year": 2020
+  },
+  {
+  "name": "Hong Kong",
+  "rate": 1.21,
+  "year": 2020
+  },
+  {
+  "name": "Taiwan",
+  "rate": 1.14,
+  "year": 2020
+  },
+  {
+  "name": "Macau",
+  "rate": 0.96,
+  "year": 2020
+  },
+  {
+  "name": "Singapore",
+  "rate": 0.87,
+  "year": 2020
+  }
+]

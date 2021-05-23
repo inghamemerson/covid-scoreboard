@@ -11,72 +11,67 @@ generator client {
 }
 
 model Country {
-  id                         Int     @default(autoincrement())
-  iso_code                   String  @id
-  slug                       String  @unique
-  emoji                      String?
-  continent                  String?
-  location                   String?
-  population                 Float?
-  population_density         Float?
-  median_age                 Float?
-  aged_65_older              Float?
-  aged_70_older              Float?
-  gdp_per_capita             Float?
-  cardiovasc_death_rate      Float?
-  diabetes_prevalence        Float?
-  handwashing_facilities     Float?
-  hospital_beds_per_thousand Float?
-  life_expectancy            Float?
-  human_development_index    Float?
-  stringency_index           Float?
-  extreme_poverty            Float?
-  female_smokers             Float?
-  male_smokers               Float?
-  data                       Data[]
+  id                      Int            @default(autoincrement())
+  iso_code                String         @id
+  slug                    String         @unique
+  emoji                   String?
+  continent               String?
+  location                String?
+  population              Float?
+  population_density      Float?
+  median_age              Float?
+  aged_65_older           Float?
+  aged_70_older           Float?
+  gdp_per_capita          Float?
+  life_expectancy         Float?
+  human_development_index Float?
+  extreme_poverty         Float?
+  data                    Data[]
+  unemployment            Unemployment[]
+  fertility               Fertility[]
+  closure                 Closure[]
 }
 
 model Data {
-  id                                    Int      @id @default(autoincrement())
-  country                               Country? @relation(fields: [countryId], references: [iso_code])
-  countryId                             String?
-  date                                  DateTime
-  total_cases                           Float?
-  new_cases                             Float?
-  new_cases_smoothed                    Float?
-  total_deaths                          Float?
-  new_deaths                            Float?
-  new_deaths_smoothed                   Float?
-  total_cases_per_million               Float?
-  new_cases_per_million                 Float?
-  new_cases_smoothed_per_million        Float?
-  total_deaths_per_million              Float?
-  new_deaths_per_million                Float?
-  new_deaths_smoothed_per_million       Float?
-  reproduction_rate                     Float?
-  icu_patients                          Float?
-  icu_patients_per_million              Float?
-  hosp_patients                         Float?
-  hosp_patients_per_million             Float?
-  weekly_icu_admissions                 Float?
-  weekly_icu_admissions_per_million     Float?
-  weekly_hosp_admissions                Float?
-  weekly_hosp_admissions_per_million    Float?
-  total_tests                           Float?
-  new_tests                             Float?
-  total_tests_per_thousand              Float?
-  new_tests_per_thousand                Float?
-  new_tests_smoothed                    Float?
-  new_tests_smoothed_per_thousand       Float?
-  positive_rate                         Float?
-  tests_per_case                        Float?
-  total_vaccinations                    Float?
-  people_vaccinated                     Float?
-  people_fully_vaccinated               Float?
-  new_vaccinations                      Float?
-  new_vaccinations_smoothed             Float?
-  total_vaccinations_per_hundred        Float?
-  people_vaccinated_per_hundred         Float?
-  people_fully_vaccinated_per_hundred   Float?
-  new_vaccinations_smoothed_per_million Float?
+  id                      Int      @id @default(autoincrement())
+  country                 Country? @relation(fields: [country_id], references: [iso_code])
+  country_id              String?
+  date                    DateTime
+  total_cases             Float?
+  total_deaths            Float?
+  total_vaccinations      Float?
+  people_vaccinated       Float?
+  people_fully_vaccinated Float?
+}
+
+model Unemployment {
+  id         Int      @id @default(autoincrement())
+  country    Country? @relation(fields: [country_id], references: [iso_code])
+  country_id String?
+  year       Int
+  value      Float?
+}
+
+model Fertility {
+  id         Int      @id @default(autoincrement())
+  country    Country? @relation(fields: [country_id], references: [iso_code])
+  country_id String?
+  year       Int
+  value      Float?
+}
+
+model Closure {
+  id                    Int      @id @default(autoincrement())
+  country               Country? @relation(fields: [country_id], references: [iso_code])
+  country_id            String?
+  income_group          String?
+  days_academic_break   Int?
+  days_fully_closed     Int?
+  days_fully_open       Int?
+  days_partially_closed Int?
+  instruction_days      Int?
+  pre_primary_pop       Int?
+  primary_pop           Int?
+  lower_secondary_pop   Int?
+  upper_secondary_pop   Int?
 }

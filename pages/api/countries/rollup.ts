@@ -6,7 +6,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { type } = req.query;
   try {
     const response = await prisma.data.groupBy({
-      by: ['countryId'],
+      by: ['country_id'],
       where: {
         NOT: [
           {
@@ -30,7 +30,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       return fatalityRatio(a._sum) > fatalityRatio(b._sum) ? -1 : 1
     }).slice(0, 10);
 
-    const isos: string[] = top10.map(({ countryId }) => countryId || '');
+    const isos: string[] = top10.map(({ country_id }) => country_id || '');
 
     const countryData = await prisma.country.findMany({
       where: {
@@ -48,7 +48,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     const result = isos.map((iso) => {
       const country = countryData.find((c) => c.iso_code === iso) || { score: null};
-      const summed = top10.find((c) => c.countryId === iso);
+      const summed = top10.find((c) => c.country_id === iso);
       let updatedCountry = {};
 
       if (summed) {
