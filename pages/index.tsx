@@ -26,8 +26,8 @@ const Home = ({ top10, bottom10 }: IHome) => (
       <div className="relative max-w-7xl mx-auto my-16 px-4 sm:my-20 sm:px-6 lg:px-8">
         <div className="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
           <div className="mt-5 md:mt-0">
-            <h2 className="text-xl mb-6">Build your own</h2>
-            <p className="txt-md mb-4">Using the scoreboard, you can update scoring weights and filter various aspects to build your own rankings.</p>
+            <h2 className="text-xl mb-6 font-semibold">COVID Impact Ranking</h2>
+            <p className="txt-md mb-4">Below are the top 10 and bottom 10 rankings of how countries were impacted by COVID-19. You can customize scoring weights and filter various dimensions to build your own rankings on the scoreboard page.</p>
             <Link href="/scoreboard">
               <a
                 className="py-2 border border-transparent text-lg font-medium rounded-md text-indigo-600 hover:text-indigo-700 focus:outline-none "
