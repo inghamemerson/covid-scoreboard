@@ -69,7 +69,7 @@ export const Table = ({ title, items }: ITable) => (
                       </p>
                       <p className="text-sm text-gray-500">
                         <span>Scores: </span>
-                        <span>Disease: {country.deathScore?.toFixed(2)} | </span>
+                        <span>Disease: {country.diseaseScore?.toFixed(2)} | </span>
                         <span>Vaccination: {country.vaccScore?.toFixed(2)} | </span>
                         <span>Economy: {country.econScore?.toFixed(2)} | </span>
                         <span>Social: {country.socialScore?.toFixed(2)}</span>

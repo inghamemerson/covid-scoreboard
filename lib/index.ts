@@ -3,14 +3,30 @@ import { ICountry } from "../@types/ICountry";
 /*
   TODO: this is scoring too high and needs to be better benchmarkd
 */
-export const deathScore = (country: ICountry): number | null => {
+export const diseaseScore = (country: ICountry): number | null => {
+  const scores: number[] = [];
   // @ts-ignore
   if (country.population && country?.data[0]?.total_deaths) {
     if (country?.data[0]?.total_deaths > country.population) {
       return null;
     }
-    return 100 - ((country.data[0].total_deaths / country.population) * 100);
+    // return 100 - ((country.data[0].total_deaths / country.population) * 100);
+    scores.push(100 - ((country.data[0].total_deaths / country.population) * 100));
   };
+
+  // @ts-ignore
+  if (country.population && country?.data[0]?.total_cases) {
+    if (country?.data[0]?.total_cases > country.population) {
+      return null;
+    }
+    // return 100 - ((country.data[0].total_cases / country.population) * 100);
+    scores.push(100 - ((country.data[0].total_cases / country.population) * 100));
+  };
+
+  if (scores.length) {
+    return scores.reduce((a, b) => a + b, 0) / scores.length;
+  }
+
   return null;
 };
 
@@ -107,7 +123,7 @@ export const ranked = (countries: ICountry[], reversed: boolean = false): ICount
 }
 
 interface IWeights {
-  deathScore: number;
+  diseaseScore: number;
   vaccScore: number;
   econScore: number;
   socialScore: number;
@@ -132,7 +148,7 @@ export const scoreCountries = (countries: ICountry[] | null, weights: IWeights,)
     const scoredCountries = countries.map((country) => {
       const scoredCountry = {
         ...country,
-        deathScore: deathScore(country),
+        diseaseScore: diseaseScore(country),
         vaccScore: vaccineScore(country),
         econScore: econScore(country),
         socialScore: socialScore(country)
@@ -143,7 +159,7 @@ export const scoreCountries = (countries: ICountry[] | null, weights: IWeights,)
     const benchmarkedCountries = scoredCountries.map((country) => {
       const benchmarked = {
         ...country,
-        deathBenchmarked: benchmark(scoredCountries, country, "deathScore"),
+        deathBenchmarked: benchmark(scoredCountries, country, "diseaseScore"),
         vaccBenchmarked: benchmark(scoredCountries, country, "vaccScore"),
         econBenchmarked: benchmark(scoredCountries, country, "econScore"),
         socialBenchmarked: benchmark(scoredCountries, country, "socialScore")

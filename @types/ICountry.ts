@@ -19,7 +19,7 @@ export interface ICountry {
   life_expectancy:             number | null;
   human_development_index:     number | null;
   extreme_poverty:             number | null;
-  deathScore?:                 number | null;
+  diseaseScore?:                 number | null;
   vaccScore?:                  number | null;
   econScore?:                  number | null;
   socialScore?:                number | null;
