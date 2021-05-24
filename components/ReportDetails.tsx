@@ -31,15 +31,10 @@ export const ReportDetails = ({ submit, setFilters, setWeights }: IReportDetails
   const [lifeExpectancy, setLifeExpectancy] = useState('');
   const [humanDevelopmentIndex, setHumanDevelopmentIndex] = useState('');
   const [extremePoverty, setExtremePoverty] = useState('');
-  const [deathBenchmarkedOverride, setDeathBenchmarkedOverride] = useState(5);
-  const [vaccBenchmarkedOverride, setVaccBenchmarkedOverride] = useState(5);
-  const [econBenchmarkedOverride, setEconBenchmarkedOverride] = useState(5);
-  const [socialBenchmarkedOverride, setSocialBenchmarkedOverride] = useState(5);
-
-  useEffect(() => {
-    // @ts-ignore
-    document.querySelectorAll('input[type="range"]').forEach((input) => input.value = 5);
-  }, []);
+  const [deathBenchmarkedOverride, setDeathBenchmarkedOverride] = useState(1);
+  const [vaccBenchmarkedOverride, setVaccBenchmarkedOverride] = useState(1);
+  const [econBenchmarkedOverride, setEconBenchmarkedOverride] = useState(1);
+  const [socialBenchmarkedOverride, setSocialBenchmarkedOverride] = useState(1);
 
   useEffect(() => {
     setFilters({
@@ -197,6 +192,7 @@ export const ReportDetails = ({ submit, setFilters, setWeights }: IReportDetails
                   min="0"
                   max="10"
                   step="1"
+                  value={deathBenchmarkedOverride}
                   onChange={e => setDeathBenchmarkedOverride(parseInt(e.target.value))}
                 />
               </div>
@@ -212,6 +208,7 @@ export const ReportDetails = ({ submit, setFilters, setWeights }: IReportDetails
                   min="0"
                   max="10"
                   step="1"
+                  value={vaccBenchmarkedOverride}
                   onChange={e => setVaccBenchmarkedOverride(parseInt(e.target.value))}
                 />
               </div>
@@ -227,6 +224,7 @@ export const ReportDetails = ({ submit, setFilters, setWeights }: IReportDetails
                   min="0"
                   max="10"
                   step="1"
+                  value={econBenchmarkedOverride}
                   onChange={e => setEconBenchmarkedOverride(parseInt(e.target.value))}
                 />
               </div>
@@ -242,6 +240,7 @@ export const ReportDetails = ({ submit, setFilters, setWeights }: IReportDetails
                   min="0"
                   max="10"
                   step="1"
+                  value={socialBenchmarkedOverride}
                   onChange={e => setSocialBenchmarkedOverride(parseInt(e.target.value))}
                 />
               </div>
