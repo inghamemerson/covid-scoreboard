@@ -53,8 +53,8 @@ export const econScore = (country: ICountry): number | null => {
 
 export const socialScore = (country: ICountry): number | null => {
   const scores: number[] = [];
-  const fertility2020 = country.fertility?.find((f) => f.year === 2020);
-  const fertility2021 = country.fertility?.find((f) => f.year === 2021);
+  // const fertility2020 = country.fertility?.find((f) => f.year === 2020);
+  // const fertility2021 = country.fertility?.find((f) => f.year === 2021);
   let days_fully_closed = null;
   let instruction_days = null;
 
@@ -64,7 +64,8 @@ export const socialScore = (country: ICountry): number | null => {
     instruction_days = country.schoolClosure[0].instruction_days;
   }
 
-  const canScoreFertility = fertility2020?.value && typeof fertility2020?.value != 'undefined' && fertility2021?.value && typeof fertility2021?.value != 'undefined';
+  // const canScoreFertility = fertility2020?.value && typeof fertility2020?.value != 'undefined' && fertility2021?.value && typeof fertility2021?.value != 'undefined';
+  const canScoreFertility = false;
   const canScoreClosures = days_fully_closed && typeof days_fully_closed != 'undefined' && instruction_days && typeof instruction_days != 'undefined';
 
   if (canScoreFertility) {
@@ -168,7 +169,11 @@ export const scoreCountries = (countries: ICountry[] | null, weights: IWeights,)
       return benchmarked;
     });
 
-    return benchmarkedCountries;
+    const filteredCountries = benchmarkedCountries.filter((country) => {
+      return !!country.diseaseScore && ((!!country.vaccScore && !!country.socialScore) || (!!country.econScore && !!country.socialScore) || (!!country.econScore && !!country.vaccScore));
+    });
+
+    return filteredCountries;
   };
 
   return [];
