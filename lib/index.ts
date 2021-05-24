@@ -1,7 +1,7 @@
 import { ICountry } from "../@types/ICountry";
 
 /*
-  TODO: this is scoring too high and needs to be better normalized
+  TODO: this is scoring too high and needs to be better benchmarkd
 */
 export const deathScore = (country: ICountry): number | null => {
   // @ts-ignore
@@ -30,7 +30,7 @@ export const econScore = (country: ICountry): number | null => {
   const data2020 = country.unemployment?.find((u) => u.year === 2020);
 
   if (data2019?.value && data2020?.value) {
-    return ((data2020.value - data2019.value) / data2019.value) * 100;
+    return 100 - (((data2020.value - data2019.value) / data2019.value) * 100);
   };
   return null;
 }
@@ -113,7 +113,7 @@ interface IWeights {
   socialScore: number;
 }
 
-const normalize = (countries: ICountry[], country: ICountry, key: string): number | null => {
+const benchmark = (countries: ICountry[], country: ICountry, key: string): number | null => {
   // @ts-ignore
   if (country[key]) {
     // @ts-ignore
@@ -143,10 +143,10 @@ export const scoreCountries = (countries: ICountry[] | null, weights: IWeights,)
     const benchmarkedCountries = scoredCountries.map((country) => {
       const benchmarked = {
         ...country,
-        deathBenchmarked: normalize(scoredCountries, country, "deathScore"),
-        vaccBenchmarked: normalize(scoredCountries, country, "vaccScore"),
-        econBenchmarked: normalize(scoredCountries, country, "econScore"),
-        socialBenchmarked: normalize(scoredCountries, country, "socialScore")
+        deathBenchmarked: benchmark(scoredCountries, country, "deathScore"),
+        vaccBenchmarked: benchmark(scoredCountries, country, "vaccScore"),
+        econBenchmarked: benchmark(scoredCountries, country, "econScore"),
+        socialBenchmarked: benchmark(scoredCountries, country, "socialScore")
       };
       benchmarked.overallBenchmarked = calculateCompositeScore(benchmarked, weights);
       return benchmarked;
