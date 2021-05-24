@@ -4,6 +4,11 @@ import { ranked, scoreCountries } from '../../../lib';
 import prisma from '../../../prisma/client';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  /*
+    This file needs some love. Ended up being a workhorse with a ton of business logic
+    and too many ignores for the linter for sake of time
+    TODO: Map URL params more effectively
+  */
   let reverse = false;
   let parsedFilters;
   let parsedWeights;

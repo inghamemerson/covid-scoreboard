@@ -14,6 +14,9 @@ const CountryIndex = ({ countries }: ICountryIndex) => {
   const [weights, setWeights] = useState({});
 
   const handleSubmit = async () => {
+    /*
+      TODO: shallow write params to the address bar
+    */
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/countries/scoreboard?filters=${JSON.stringify(filters)}&weights=${JSON.stringify(weights)}`);
     const data = await res.json();
 
@@ -52,6 +55,9 @@ const CountryIndex = ({ countries }: ICountryIndex) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
+  /*
+    TODO: Pass URL params through on initial load so the board can be linked
+  */
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/countries/scoreboard`);
   const data = await res.json();
   let countries: ICountry[] | string[] = data;

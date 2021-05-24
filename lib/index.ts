@@ -1,5 +1,8 @@
 import { ICountry } from "../@types/ICountry";
 
+/*
+  TODO: this is scoring too high and needs to be better normalized
+*/
 export const deathScore = (country: ICountry): number | null => {
   // @ts-ignore
   if (country.population && country?.data[0]?.total_deaths) {

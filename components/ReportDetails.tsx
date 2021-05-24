@@ -31,10 +31,15 @@ export const ReportDetails = ({ submit, setFilters, setWeights }: IReportDetails
   const [lifeExpectancy, setLifeExpectancy] = useState('');
   const [humanDevelopmentIndex, setHumanDevelopmentIndex] = useState('');
   const [extremePoverty, setExtremePoverty] = useState('');
-  const [deathBenchmarkedOverride, setDeathBenchmarkedOverride] = useState(1);
-  const [vaccBenchmarkedOverride, setVaccBenchmarkedOverride] = useState(1);
-  const [econBenchmarkedOverride, setEconBenchmarkedOverride] = useState(1);
-  const [socialBenchmarkedOverride, setSocialBenchmarkedOverride] = useState(1);
+  const [deathBenchmarkedOverride, setDeathBenchmarkedOverride] = useState(5);
+  const [vaccBenchmarkedOverride, setVaccBenchmarkedOverride] = useState(5);
+  const [econBenchmarkedOverride, setEconBenchmarkedOverride] = useState(5);
+  const [socialBenchmarkedOverride, setSocialBenchmarkedOverride] = useState(5);
+
+  useEffect(() => {
+    // @ts-ignore
+    document.querySelectorAll('input[type="range"]').forEach((input) => input.value = 5);
+  }, []);
 
   useEffect(() => {
     setFilters({
